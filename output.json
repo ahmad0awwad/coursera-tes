@@ -18,6 +18,8 @@
                             "name": "Golden Hoop Earrings",
                             "name_arabic": "أقراط ذهبية دائرية",
                             "Picture": "/images/ear.png",
+                            "Video": "videos/RING-MIX-STONESvid.mp4", 
+
                             "Item Code / SKU": "27021",
                             "Description_English": "GOLD 18KT :8.226GM DIAMOND :1.770CT QUALITY:VS-SI /G MADE IN TURKEY Diamond hoop earrings superior craftsmanship and style. The seamless row of diamonds adorning each earring reflects brilliance and luxury.",
                             "Description_Arabic": "ذهب عيار 18 قيراط: 8.226 جم. ألماس: 1.770 قيراط. الجودة: VS-SI / G. صنع في تركيا. أقراط دائرية مرصعة بالألماس تعكس حرفية وأسلوبًا فائقًا. يعكس صف الألماس المتكامل على كل حلق بريقًا وفخامة.",
@@ -45,6 +47,8 @@
                             "name": "Ruby Earrings",
                             "name_arabic": "أقراط ياقوت",
                             "Picture": "/images/Ruby-EARRING.png",
+                            "Video": "videos/RING-MIX-STONESvid.mp4", 
+
                             "Item Code / SKU": "70500",
                             "Description_English": "18KT GOLD:1.886GMS DIAMONDS:0.024CTS QUALITY :VS G/H RUBY :1.883CTS MADE IN KUWAIT Introducing our exquisite RUBY earrings, where timeless elegance meets modern sophistication. Specially made for your baby.",
                             "Description_Arabic": "ذهب عيار 18 قيراط: 1.886 جرام. ألماس: 0.024 قيراط. الجودة: VS G/H. ياقوت: 1.883 قيراط. صنع في الكويت. نقدم لكم أقراط الياقوت الرائعة، حيث تلتقي الأناقة الكلاسيكية مع الرقي العصري. صممناها خصيصًا لطفلك.",
@@ -79,6 +83,8 @@
                             "name": "Golden Bead Bangle",
                             "name_arabic": "سوار ذهب خرزي",
                             "Picture": "/images/golden-bead-Bangle.png",
+                            "Video": "videos/RING-MIX-STONESvid.mp4", 
+
                             "Item Code / SKU": "27021",
                             "Description_English": "18KT GOLD :6.530GM DIAMONDS :0.106CTS QUALITY :VS G/H PEARL :6.316GM MADE IN HONG KONG Elevate your style with this exquisite pearl bracelet made with a golden bead design that beautifully complements the radiant pearls.",
                             "Description_Arabic": "ذهب عيار 18 قيراط: 6.530 جرام. ألماس: 0.106 قيراط. الجودة: VS G/H. لؤلؤ: 6.316 جرام. صنع في هونغ كونغ. ارتق بأسلوبك مع هذا السوار المذهل المصنوع من اللؤلؤ والتصميم الخرزي الذهبي الذي يكمل اللآلئ المشعة بشكل جميل.",
@@ -114,6 +120,7 @@
                             "name": "RING MIX STONES",
                             "name_arabic": "خاتم مزيج الأحجار الكريمة",
                             "Picture": "/images/Ring-Mix-Stone.png",
+                            "Video": "videos/RING-MIX-STONESvid.mp4", 
                             "Item Code / SKU": "27021",
                             "Description_English": "18KT GOLD :5.00GMS DIAMONDS:0.090CTS QUALITY :VS-SI /G (BLU TOPAZ/AMETHYST/CITRINE/PERIDOT)1.89GM MADE IN TURKEY This multi-color gemstone flower ring is a radiant addition to Al Othman jewellery collection, celebrating beauty and nature.",
                             "Description_Arabic": "ذهب عيار 18 قيراط: 5.00 جرام. ألماس: 0.090 قيراط. الجودة: VS-SI / G. (بلو توباز، جمشت، سيترين، بريودوت) 1.89 جرام. صنع في تركيا. هذا الخاتم الزهري المزدان بالأحجار الكريمة متعددة الألوان هو إضافة مشعة إلى مجموعة مجوهرات العثمان، يحتفي بالجمال والطبيعة.",
@@ -131,10 +138,12 @@
                             "name": "RING MIX STONE",
                             "name_arabic": "خاتم مزيج الأحجار الكريمة",
                             "Picture": "/images/Ring-Mix-Stone.png",
+                            "Video": "videos/RING-MIX-STONESvid.mp4", 
+
                             "Item Code / SKU": "27152",
                             "Description_English": "GOLD 18 KT. 2.550GMS DIAMONDS:0.050CT QUALITY :SI G (PERIDOT,AMETHYST,CITRIN) 1.27CTS MADE IN TURKEY Inspired by the spirit of three combination semi precious stone, setting with yellow gold and diamonds.",
                             "Description_Arabic": "ذهب عيار 18 قيراط: 2.550 جرام. ألماس: 0.050 قيراط. الجودة: SI G. (بريودوت، جمشت، سيترين) 1.27 قيراط. صنع في تركيا.",
-                            "Sell Price": "N/A KD",
+                            "Sell Price": "310 KD",
                             "Gold Weight": "2.550",
                             "Diamond Weight": "0.050",
                             "Color Of Stone": "N/A",

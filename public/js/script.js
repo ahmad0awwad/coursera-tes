@@ -1,3 +1,8 @@
+$(document).ready(function () {
+    $("#header-placeholder").load("header.html");
+    $("#footer-placeholder").load("footer.html");
+});
+
 document.querySelector('#clear').addEventListener('click', function () {
     localStorage.removeItem('cart');
     updateCartCount()
@@ -563,7 +568,7 @@ $("#footer-placeholder").load("footer.html", function () {
                                     </div>
                                 </div>
                                 <h3><a href="productTemplate.html?id=${product._id}">${product.name.en}</a></h3>
-                                <p class="price">${product.price} KD</p>
+                                <p class="price">${product.price} </p>
                             </div>
                         </div>
                     `;
@@ -580,7 +585,6 @@ $("#footer-placeholder").load("footer.html", function () {
 
 
 document.addEventListener('DOMContentLoaded', async () => {
-    // Extract the productId from the URL
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('productId');
 
@@ -589,9 +593,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         return;
     }
 
-    console.log("Extracted productId:", productId);
-
-    // Fetch product details
     try {
         const response = await fetch(`/api/products/${productId}`);
         if (!response.ok) {
@@ -600,40 +601,85 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         const product = await response.json();
-        console.log("Fetched product details:", product);
 
-        // Update the DOM elements
+        // Update product details
         document.getElementById("product-title").textContent = product.name || "Product Name Not Available";
         document.getElementById("product-price").textContent = product["Sell Price"]
             ? `${product["Sell Price"]} KD`
             : "Price Not Available";
         document.getElementById("product-description").textContent = product.Description_English || "Description Not Available";
+document.getElementById("gold-weight").textContent = product["Gold Weight"] || "N/A";
+document.getElementById("diamond-weight").textContent = product["Diamond Weight"] || "N/A";
+document.getElementById("color-of-stone").textContent = product["Color Of Stone"] || "N/A";
+document.getElementById("dia-cut").textContent = product["Dia Cut"] || "N/A";
+document.getElementById("no-of-diamond").textContent = product["No Of Diamond"] || "N/A";
+document.getElementById("item-country").textContent = product["item country"] || "N/A";
+document.getElementById("item-code").textContent = product["Item Code / SKU"] || "N/A";
 
-        // Update the main image
+
+        const swiperWrapper = document.getElementById("swiper-wrapper");
+
+        // Add main image
         if (product.Picture) {
-            const mainImage = document.getElementById("mainImage");
-            mainImage.src = product.Picture;
-            mainImage.alt = product.name || "Product Image";
-        } else {
-            console.warn("Product image not available.");
+            const imageSlide = document.createElement('div');
+            imageSlide.className = 'swiper-slide';
+            imageSlide.innerHTML = `<img src="${product.Picture}" class="img-fluid" alt="${product.name || "Product Image"}">`;
+            swiperWrapper.appendChild(imageSlide);
         }
 
-        // Update thumbnails (if applicable)
-        const thumbnailsContainer = document.getElementById("thumbnails");
-        if (thumbnailsContainer) {
-            // Assuming thumbnails are in an array product.images (if applicable)
-            if (product.images && product.images.length > 0) {
-                thumbnailsContainer.innerHTML = product.images
-                    .map(image => `<img src="${image}" class="thumbnail" alt="${product.name} Thumbnail">`)
-                    .join("");
-            } else {
-                thumbnailsContainer.textContent = "No additional images.";
-            }
+        // Add additional images (if any)
+        if (product.images && product.images.length > 0) {
+            product.images.forEach(image => {
+                const imageSlide = document.createElement('div');
+                imageSlide.className = 'swiper-slide';
+                imageSlide.innerHTML = `<img src="${image}" class="img-fluid" alt="${product.name || "Product Image"}">`;
+                swiperWrapper.appendChild(imageSlide);
+            });
         }
+
+        // Add video
+        if (product.Video) {
+            const videoSlide = document.createElement('div');
+            videoSlide.className = 'swiper-slide';
+            videoSlide.innerHTML = `
+                <video class="img-fluid" autoplay loop muted>
+                    <source src="${product.Video}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            `;
+            swiperWrapper.appendChild(videoSlide);
+        }
+
+        // Initialize Swiper
+        const swiper = new Swiper('.swiper-container', {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            loop: true,
+            on: {
+                slideChangeTransitionStart: () => {
+                    // Pause all videos
+                    document.querySelectorAll('video').forEach(video => video.pause());
+                    console.log("Video Path:", product.Video); // Check if this logs the correct path
+
+                },
+                slideChangeTransitionEnd: () => {
+                    // Play the video if it's active
+                    const activeSlide = document.querySelector('.swiper-slide-active video');
+                    if (activeSlide) {
+                        activeSlide.play();
+                    }
+                },
+            },
+            
+        });
     } catch (error) {
         console.error("Error fetching or displaying product details:", error);
     }
 });
+
+
 
 
 document.addEventListener('DOMContentLoaded', () => {

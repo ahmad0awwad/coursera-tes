@@ -25,7 +25,7 @@ const PORT = 8000;
 
 ////
 
-
+//لتحديث الداتا بيس من ملف output.json
 const isValidCategory = (category) => {
     return category._id && category.name && Array.isArray(category.subcategories);
 };
@@ -55,7 +55,6 @@ const syncJsonToDatabase = async () => {
             } else {
                 console.log(`Updating existing category: ${categoryData.name}`);
 
-                // Sync subcategories
                 for (const subcategoryData of categoryData.subcategories) {
                     let subcategory = category.subcategories.id(subcategoryData._id);
 
@@ -65,7 +64,6 @@ const syncJsonToDatabase = async () => {
                     } else {
                         console.log(`Syncing products in subcategory: ${subcategoryData.name}`);
 
-                        // Sync products
                         for (const productData of subcategoryData.products) {
                             const existingProduct = subcategory.products.id(productData._id);
 
@@ -75,27 +73,28 @@ const syncJsonToDatabase = async () => {
                             } else {
                                 console.log(`Updating product: ${productData.name}`);
                                 Object.assign(existingProduct, productData);
+
+                                if (productData.Video) {
+                                    console.log(`Updating video for product: ${productData.name}`);
+                                    existingProduct.Video = productData.Video;
+                                }
                             }
                         }
 
-                        // Handle deleted products
                         subcategory.products = subcategory.products.filter(product =>
                             subcategoryData.products.some(jsonProduct => jsonProduct._id === product._id)
                         );
                     }
                 }
 
-                // Handle deleted subcategories
                 category.subcategories = category.subcategories.filter(subcategory =>
                     categoryData.subcategories.some(jsonSubcategory => jsonSubcategory._id === subcategory._id)
                 );
             }
 
-            // Save changes to the category
             await category.save();
         }
 
-        // Handle deleted categories
         for (const dbCategory of dbCategories) {
             if (!jsonCategories.some(jsonCategory => jsonCategory._id === dbCategory._id)) {
                 console.log(`Deleting category: ${dbCategory.name}`);

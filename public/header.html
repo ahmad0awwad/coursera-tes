@@ -45,4 +45,43 @@
         </div>
     </div>
 </header>
+<script>
+function populateHeaderCategories() {
+    // Fetch categories from the API
+    fetch('/api/categories')
+        .then(response => response.json())
+        .then(data => {
+            const categoriesDropdownMenu = document.getElementById('categories-dropdown-menu');
 
+            if (!categoriesDropdownMenu) {
+                console.error('Dropdown menu element not found in the header.');
+                return;
+            }
+
+            const categories = data.categories || [];
+            if (!Array.isArray(categories)) {
+                console.error('Expected an array of categories, but got:', categories);
+                return;
+            }
+
+            // Populate dropdown menu with categories only
+            let dropdownHtml = '';
+            categories.forEach((category) => {
+                const categoryId = category._id || 'undefined';
+                const categoryName = category.name || 'Unknown Category';
+
+                dropdownHtml += `<a class="dropdown-item" href="list.html?category=${categoryId}">${categoryName}</a>`;
+            });
+
+            // Insert generated HTML into the dropdown menu
+            categoriesDropdownMenu.innerHTML = dropdownHtml;
+        })
+        .catch(error => console.error('Error fetching categories for header:', error));
+}
+
+// Call the function when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', populateHeaderCategories);
+
+
+</script>
+</body>
