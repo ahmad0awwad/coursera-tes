@@ -1,0 +1,236 @@
+{
+  "areas": ["Al - Naeem", "Al - Jahra", "Al - Nahda Sharq al - Sulaibikhat", "Al - Naseem", "Al - Nuzha", "Al - Nwaiseeb", "Al - Omariya", "Al - Oyoon", "Al - Qadisiya", "Al - Qasser", "Al - Qibla", "Al - Qosour", "Al - Qurain", "Al - Rabiya", "Al - Rai", "Al - Rawda", "Al - Rehab", "Al - Reqa", "Al - Rimaithiya", "Al - Riqai", "Al - Sabahiya", "Al - Salam", "Al - Salmey", "Al - Salmiya", "Al - Sedeeq", "Al - Sha'ab", "Al - Shamiya", "Al - Shuhada", "Al - Shuwaikh Alsakania", "Al - Shuwaikh Alsinaeiat 1", "Al - Shuwaikh Alsinaeiat 2", "Al - Shuwaikh Alsinaeiat 3", "Al - Shuwaikh Altaelimia", "Al - Subia - Om Qasser", "Al - Sulaibia Alziraeiat 1", "Al - Sulaibia Alziraeiat 2", "Al - Sulaibikhat", "Al - Sulaibiya Alsinaeiat 1", "Al - Sulaibiya Alsinaeiat 2", "Al - Surra", "Al - Waha", "Al - Yarmouk", "Al - Zahraa", "Al - Zour", "Al- Shuwaikh Alsihiya", "Al- Shuwaikh Altijaria", "Ali Sabah al - Salem", "Almatar Alduwali", "Anjefa", "Ashbeliah", "Bayan", "Beneid al - Qar", "Dasman", "Fahad al - Ahmad", "Failaka", "Garnata", "Gharb al - Jahra", "Hadiya", "Hateen", "Hawalli", "Jabriyyah", "Jaber Al - Ahmad"],
+    "slider": [
+        {
+          "image": "images/slider.png",
+          "title": "Limited product",
+          "collection": "rockstar collection",
+          "link": "productTemplate.html?id=1"
+        },
+        {
+          "image": "images/slider.png",
+          "title": "Limited product",
+          "collection": "summer collection",
+          "link": "productTemplate.html?id=2"
+        },
+        {
+          "image": "images/slider.png",
+          "title": "Limited product",
+          "collection": "winter collection",
+          "link": "productTemplate.html?id=3"
+        }
+      ],
+    "categories": [
+      {
+        "id": 1,
+        "name": {
+          "en": "Rings",
+          "ar": "خواتم"
+        },
+        "subcategories": [
+          {
+            "id": 1,
+            "name": {
+              "en": "Engagement Rings",
+              "ar": "خواتم الخطوبة"
+            },
+            "products": [
+              {
+                "id": 1,
+                "name": {
+                  "en": "Diamond Engagement Ring",
+                  "ar": "خاتم خطوبة ماسي"
+                },
+                "price": 2000,
+                "description": {
+                  "en": "A beautiful diamond engagement ring.",
+                  "ar": "خاتم خطوبة ماسي جميل."
+                },
+                "images": [
+                  "images/product1.png",
+                  "images/product2.png",
+                  "images/product3.png"
+                ],
+                "featured": true
+              },
+              {
+                "id": 2,
+                "name": {
+                  "en": "Gold Engagement Ring",
+                  "ar": "خاتم خطوبة ذهبي"
+                },
+                "price": 1500,
+                "description": {
+                  "en": "An elegant gold engagement ring.",
+                  "ar": "خاتم خطوبة ذهبي أنيق."
+                },
+                "images": [
+                  "images/product2.png",
+                  "images/product3.png",
+                  "images/product4.png"
+                ],
+                "featured": true
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "name": {
+              "en": "Wedding Bands",
+              "ar": "خواتم الزواج"
+            },
+            "products": [
+              {
+                "id": 3,
+                "name": {
+                  "en": "Platinum Wedding Band",
+                  "ar": "خاتم زواج بلاتيني"
+                },
+                "price": 1000,
+                "description": {
+                  "en": "A classic platinum wedding band.",
+                  "ar": "خاتم زواج بلاتيني كلاسيكي."
+                },
+                "images": [
+                  "images/product3.png",
+                  "images/product4.png",
+                  "images/product5.png"
+                ],
+                "featured": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": {
+          "en": "Necklaces",
+          "ar": "قلائد"
+        },
+        "subcategories": [
+          {
+            "id": 3,
+            "name": {
+              "en": "Pendants",
+              "ar": "القلادات"
+            },
+            "products": [
+              {
+                "id": 4,
+                "name": {
+                  "en": "Heart Pendant Necklace",
+                  "ar": "قلادة بندانت قلب"
+                },
+                "price": 500,
+                "description": {
+                  "en": "A charming heart pendant necklace.",
+                  "ar": "قلادة بندانت قلب ساحرة."
+                },
+                "images": [
+                  "images/product4.png",
+                  "images/product5.png",
+                  "images/product6.png",
+                  "images/product2.png"
+                ],
+                "featured": true
+              }
+            ]
+          },
+          {
+            "id": 4,
+            "name": {
+              "en": "Chokers",
+              "ar": "تشوكر"
+            },
+            "products": [
+              {
+                "id": 5,
+                "name": {
+                  "en": "Diamond Choker",
+                  "ar": "تشوكر ماسي"
+                },
+                "price": 1200,
+                "description": {
+                  "en": "A stunning diamond choker.",
+                  "ar": "تشوكر ماسي مذهل."
+                },
+                "images": [
+                  "images/product5.png",
+                  "images/product6.png",
+                  "images/product7.png"
+                ],
+                "featured": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": {
+          "en": "Bracelets",
+          "ar": "أساور"
+        },
+        "subcategories": [
+          {
+            "id": 5,
+            "name": {
+              "en": "Bangles",
+              "ar": "الأساور"
+            },
+            "products": [
+              {
+                "id": 6,
+                "name": {
+                  "en": "Gold Bangle",
+                  "ar": "سوار ذهبي"
+                },
+                "price": 800,
+                "description": {
+                  "en": "A classic gold bangle.",
+                  "ar": "سوار ذهبي كلاسيكي."
+                },
+                "images": [
+                  "images/product6.png",
+                  "images/product7.png",
+                  "images/product8.png"
+                ],
+                "featured": true
+              }
+            ]
+          },
+          {
+            "id": 6,
+            "name": {
+              "en": "Cuffs",
+              "ar": "الكفات"
+            },
+            "products": [
+              {
+                "id": 7,
+                "name": {
+                  "en": "Silver Cuff",
+                  "ar": "كفة فضية"
+                },
+                "price": 100,
+                "description": {
+                  "en": "A sleek silver cuff.",
+                  "ar": "كفة فضية أنيقة."
+                },
+                "images": [
+                  "images/product7.png",
+                  "images/product8.png",
+                  "images/product1.png"
+                ],
+                "featured": true
+              }
+            ]
+          }
+        ]
+      }
+    ]
+    
+  }
+  
+  

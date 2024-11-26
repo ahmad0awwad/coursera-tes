@@ -1,0 +1,143 @@
+/* Invoice Page Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.invoice {
+    padding: 60px 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.invoice-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.invoice-logo img {
+    max-width: 150px;
+}
+
+.invoice-title {
+    text-align: center;
+}
+
+.invoice-title h2 {
+    margin: 0;
+    font-size: 32px;
+    color: #4A4A4A;
+}
+
+.invoice-title h4 {
+    margin: 5px 0;
+    font-size: 18px;
+    color: #555;
+}
+
+.invoice-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.invoice-details h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #444;
+}
+
+.billing-info, .payment-info {
+    width: 45%;
+}
+
+.invoice-items {
+    margin-bottom: 40px;
+}
+
+.table-responsive {
+    margin-top: 30px;
+}
+
+.table th, .table td {
+    border-top: none;
+    font-size: 18px;
+    color: #333;
+}
+
+.table th {
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: bold;
+}
+
+.invoice-summary {
+    margin-bottom: 40px;
+}
+
+.invoice-summary p {
+    font-size: 18px;
+    color: #333;
+    margin: 5px 0;
+}
+
+.invoice-summary p strong {
+    width: 150px;
+    display: inline-block;
+}
+
+.print-button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    font-size: 16px;
+    padding: 10px 20px;
+    text-align: center;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .invoice-header, .invoice-details {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .invoice-title {
+        text-align: left;
+        margin-top: 20px;
+    }
+
+    .billing-info, .payment-info {
+        width: 100%;
+    }
+}

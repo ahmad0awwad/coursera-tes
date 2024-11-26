@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/cart.css">
+
+    <title>Cart || ALOTHMAN GALLARY FOR FINE JEWELRY</title>
+</head>
+
+<body>
+    <!--HEADER START-->
+    <div id="header-placeholder"></div>
+
+    <!--HEADER END-->
+
+    <!--banner top Start-->
+    <section class="bannner-top">
+        <div class="container">
+            <div class="banner-text text-center">
+                <h3>BEST SALE PRODUCT</h3>
+                <p>We Believe That Good Design is Always in Season</p>
+                <a href="#" class="btn btn-shop2">shop now</a>
+            </div>
+        </div>
+    </section>
+    <!--banner top End-->
+
+    <!--CONTENT MAIN START-->
+    <section class="checkout cart">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Cart</li>
+
+                </ol>
+            </nav>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th scope="col">PRODUCT</th>
+                            <th scope="col">PRICE</th>
+                            <th scope="col" class="qty">QUANTITY</th>
+                            <th scope="col">TOTAL</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-items-container">
+                        <!-- Dynamic cart items will be inserted here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            <form action="" class="custom-form">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-w">
+                            <div class="form-group">
+                                <div class="input-group coupn-input">
+                                    <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Coupon code">
+                                    <div class="input-group-prepend">
+                                        <button class="input-group-text">apply</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="link-box">
+                                <a href="list.html" class="btn btn-secondary">back to shopping</a>
+                                <a href="#" class="btn btn-secondary" onclick="updateCart()">update cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="total_cart">
+                            <div class="cart-body">
+                                <p> <span>Subtotal</span> <span class="amount" id="subtotal-amount">0 KD</span> </p>
+                                <p> <span>Total</span> <span class="amount clr-b" id="total-amount">0 KD</span> </p>
+                            </div>
+                            <a href="cout.html" class="btn btn-primary w-100">Proceed to checkout</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!--CONTENT MAIN END-->
+
+    <!--FOOTER START-->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="f-card">
+                        <a href="index.html" class="brand_footer">
+                            <img src="images/logo.svg" alt="">
+                        </a>
+                        <ul class="social-links">
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2 class="heading3">INFO</h2>
+                            <ul class="address-box">
+                                <li> <span><i class="fas fa-home"></i> </span>address </li>
+                                <li><span><img src="images/phone.png" alt=""></span> +0-000-000-0000 </li>
+                                <li><span><i class="fas fa-envelope"></i></span> <a href="mailto:email@gmail.com">email@gmail.com</a> </li>
+                                <li><span><i class="far fa-clock"></i></span> Monday - Saturday : 8:00 am - 18:00 pm <br>
+                                    Sunday : Closed </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <h2 class="heading3">Page</h2>
+                            <ul class="quick-links">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">product</a></li>
+                                <li><a href="#">contact</a></li>
+                                <li><a href="#">About Us</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <h2 class="heading3">Sign Up</h2>
+                            <form action="">
+                                <input type="text" class="form-control" placeholder="Enter Email Address">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <a href="javascript:" id="return-to-top">TOP</a>
+    <!--FOOTER END-->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/bootstrap-input-spinner.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const cartItemsContainer = document.getElementById('cart-items-container');
+    const subtotalElement = document.getElementById('subtotal-amount');
+    const totalElement = document.getElementById('total-amount');
+
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    if (cart.length === 0) {
+        cartItemsContainer.innerHTML = '<tr><td colspan="5">Your cart is empty</td></tr>';
+        subtotalElement.textContent = '0 KD';
+        totalElement.textContent = '0 KD';
+        return;
+    }
+
+    let subtotal = 0;
+
+    cart.forEach(item => {
+        // Parse the price correctly to handle thousand separator
+        const price = parseInt(String(item.price).replace(/[^\d]/g, ''), 10) || 0; // Remove non-numeric characters
+        const quantity = parseInt(item.quantity, 10) || 0;
+        const totalPrice = price * quantity;
+
+        subtotal += totalPrice;
+
+        const cartRow = `
+            <tr>
+                <td><img src="${item.image}" alt="${item.name}" class="img-thumbnail" width="50"></td>
+                <td>${item.name || "Unknown Product"}</td>
+                <td>${price.toLocaleString()} KD</td>
+                <td>
+                    <input type="number" class="quantity-input" min="1" value="${quantity}" data-name="${item.name}">
+                </td>
+                <td>${totalPrice.toLocaleString()} KD</td>
+            </tr>
+        `;
+
+        cartItemsContainer.insertAdjacentHTML('beforeend', cartRow);
+    });
+
+    subtotalElement.textContent = `${subtotal.toLocaleString()} KD`;
+    totalElement.textContent = `${subtotal.toLocaleString()} KD`;
+
+    // Add event listener for quantity changes
+    document.querySelectorAll('.quantity-input').forEach(input => {
+        input.addEventListener('change', function () {
+            const productName = this.dataset.name;
+            const newQuantity = parseInt(this.value, 10);
+
+            // Update the cart in localStorage
+            const updatedCart = cart.map(item => {
+                if (item.name === productName) {
+                    item.quantity = newQuantity;
+                }
+                return item;
+            });
+
+            localStorage.setItem('cart', JSON.stringify(updatedCart));
+
+            // Refresh the page to reflect changes
+            location.reload();
+        });
+    });
+});
+
+
+    </script>
+    <script>
+        $("input[type='number']").inputSpinner()
+    </script>
+</body>
+</html>

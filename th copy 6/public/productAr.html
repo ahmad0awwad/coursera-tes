@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="rtl">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="css/stylesAr.css">
+    <link rel="stylesheet" href="css/mediaAr.css">
+    <title>Product Details || ALOTHMAN GALLARY FOR FINE JEWELRY</title>
+</head>
+
+<body>
+<!--HEADER START-->
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-lg">
+                    <a class="navbar_brand" href="indexAr.html">
+                        <img src="images/logo.svg" alt="">
+                    </a>
+                    <div class="button-nav">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav_links mr-auto">
+                            <li class="active"><a href="indexAr.html">الرئيسية</a></li>
+                            <li ><a href="list.html">المنتجات</a></li>
+                            <li><a href="contact.html">تواصل</a></li>
+                            <li><a href="about.html"> نبذة</a></li>
+                        </ul>
+                    </div>
+                    <div class="right_links">
+                        <ul class="language_opt">
+                            <li><a href="#" class="selected">Ar</a>/<a href="product.html">En</a></li>
+                            <li><a href="#">سجل الدخول</a></li>
+                        </ul>
+                        <ul class="cart_item">
+                            <li><a href="#"><img src="images/heart.png" alt=""></a></li>
+                            <li><a href="cart.html"><img src="images/cart.png" alt=""> <span class="cart-c">0</span></a></li>
+                            <li><a href="#"><img src="images/search-icon.png" alt=""></a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!--HEADER END-->
+
+<!--PRODUCT DETAILS START-->
+<section class="product-details">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
+                <li class="breadcrumb-item"><a href="list.html">المنتجات</a></li>
+                <li class="breadcrumb-item active" aria-current="page"> اسم المنتج</li>
+            </ol>
+        </nav>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="product-gallery">
+                    <img src="images/product1.png" id="mainImage" alt="Product Image" class="img-fluid main-image">
+                    <div class="thumbnails">
+                        <div class="thumbnail">
+                            <img src="images/product1.png" alt="Product Image 1" onclick="changeImage('images/product1.png')">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="images/product2.png" alt="Product Image 2" onclick="changeImage('images/product2.png')">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="images/product3.png" alt="Product Image 3" onclick="changeImage('images/product3.png')">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="images/product4.png" alt="Product Image 4" onclick="changeImage('images/product4.png')">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="product-info">
+                    <h1 class="product-title"> اسم المنتج</h1>
+                    <p class="product-price">60 KD</p>
+                    <p class="product-description">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                      dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
+                      proident, suorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                      dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
+                      proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                      laboris nisi nt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+                      eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 
+                      laborum.
+                  </p>
+                  
+                    <div class="quantity">
+                        <button class="quantity-button" onclick="this.nextElementSibling.stepDown()">-</button>
+                        <input type="number" value="1" min="1" max="10" class="quantity-input">
+                        <button class="quantity-button" onclick="this.previousElementSibling.stepUp()">+</button>
+                    </div>
+                    <button class="btn btn-primary">اضف إلى السلة </button>
+                    <button class="btn btn-secondary">أضف إلى قائمة الأمنيات </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--PRODUCT DETAILS END-->
+
+<!--FOOTER START-->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="f-card">
+                    <a href="indexAr.html" class="brand_footer">
+                        <img src="images/logo.svg" alt="">
+                    </a>
+                    <ul class="social-links">
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2 class="heading3">معلومات</h2>
+                        <ul class="address-box">
+                            <li><span><i class="fas fa-home"></i></span> Address</li>
+                            <li><span><img src="images/phone.png" alt=""></span> +0-000-000-0000</li>
+                            <li><span><i class="fas fa-envelope"></i></span> <a href="mailto:email@gmail.com">email@gmail.com</a></li>
+                            <li><span><i class="far fa-clock"></i></span> Monday - Saturday : 8:00 am - 18:00 pm<br>Sunday : Closed</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h2 class="heading3">الص؛</h2>
+                        <ul class="quick-links">
+                            <li><a href="#">الرئيسية</a></li>
+                            <li><a href="#">المنتجات</a></li>
+                            <li><a href="#">تواصل</a></li>
+                            <li><a href="#">نبذة</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h2 class="heading3">سجل الدخول</h2>
+                        <form action="">
+                            <input type="text" class="form-control" placeholder="ضع عنوان بريدك الالكتروني">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<a href="javascript:" id="return-to-top">TOP</a>
+<!--FOOTER END-->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="js/jquery-3.3.1.slim.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
