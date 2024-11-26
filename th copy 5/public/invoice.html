@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt</title>
+    <style>
+    /* Ensure the body takes the full viewport height */
+    body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+
+  /* Main container with header, main content, and footer */
+  .receipt {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  /* Header styling */
+  header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  .logo img {
+    max-width: 100px; /* Adjust the width as needed */
+    max-height: 60px; /* Ensure the logo height doesn't take too much space */
+    object-fit: contain; /* Keep the aspect ratio */
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+  }
+
+  .info p {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Footer styling */
+  footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+
+  /* Main content section that will be split */
+  .main {
+    display: flex;
+    flex: 1; /* Take the remaining space between header and footer */
+    padding: 20px;
+  }
+
+  /* Split layout for left and right sections */
+  .split {
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  /* Left side contains two tables stacked */
+  .split.left {
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+  }
+ /* Right side contains one table and grows to fill the height */
+ .split.right {
+    background-color: #e4e4e4;
+    flex-grow: 1; /* This makes the right side take all available space */
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Tables within the sections */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+
+  table, th, td {
+    border: 1px solid #000;
+  }
+
+  th, td {
+    padding: 8px;
+    text-align: center;
+  }
+
+  /* Totals section */
+  .totals {
+    padding: 10px;
+  }
+    </style>
+</head>
+<body>
+    <div class="receipt">
+        <!-- Header Section with logo on the left and customer/bill info on the right -->
+        <header>
+          <!-- Logo on the left -->
+          <div class="logo">
+            <img src="logo.svg" alt="Company Logo" class="img">
+          </div>
+    
+          <!-- Info Section (Customer and Bill Details) -->
+          <section class="info">
+            <div class="customer-info">
+                <p><strong>Customer Name:</strong> <span id="customerName"></span></p>
+                <p><strong>Civil ID:</strong> <span id="civilId"></span></p>
+                <p><strong>Total Price:</strong> <span id="totalPrice"></span></p>
+                <p><strong>Total Discount:</strong> <span id="totalDiscount"></span></p>
+                <p><strong>Net Total:</strong> <span id="netTotal"></span></p>
+            </div>
+    
+            <!-- <div class="bill-info">
+              <p><strong>Cash-Credit/</strong></p>
+              <p><strong>Bill No/</strong> 3052</p>
+              <p><strong>Date/</strong> 30/05/2024</p>
+            </div> -->
+          </section>
+        </header>
+    
+        <!-- Main Content Section -->
+        <div class="main">
+          <!-- Left Side with Two Tables -->
+          <div class="split left">
+            <div class="centered">
+              <!-- First Table -->
+              <table>
+                <thead>
+                  <tr>
+                    <th colspan="1">SN</th>
+                    <th>Item</th>
+                    <th>Item Name</th>
+                    <th>Qty</th>
+                    <th>
+                      <!-- Nested Table for Price -->
+                      <table>
+                        <tr>
+                          <td colspan="2">Price</td>
+                        </tr>
+                        <tr>
+                          <td>KD</td>
+                          <td>Fils</td>
+                        </tr>
+                      </table>
+                    </th>
+                    <th>Disc</th>
+                    <th>
+                      <!-- Nested Table for Price After Disc -->
+                      <table>
+                        <tr>
+                          <td colspan="2">Price After Disc</td>
+                        </tr>
+                        <tr>
+                          <td>KD</td>
+                          <td>Fils</td>
+                        </tr>
+                      </table>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody id="generalTable-body"></tbody>
+                <tr>
+                    <td>1</td>
+                    <td>2222</td>
+                    <td>Necklace Lamp</td>
+                    <td>1</td>
+                    <td>
+                      <!-- Nested Table for Actual Price -->
+                      <table border="1" width="100%">
+                        <tr>
+                          <td>295</td>
+                          <td>0</td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td>75.000</td>
+                    <td>
+                      <!-- Nested Table for Discounted Price -->
+                      <table border="1" width="100%">
+                        <tr>
+                          <td>220</td>
+                          <td>0</td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+    
+              <!-- Second Table (Gold Description) -->
+              <table>
+                <thead>
+                    <thead>
+                        <!-- First header row -->
+                        <tr>
+                            <th colspan="6">Item gold</th>
+                        </tr>
+                  <tr>
+                    <th>Gold Type</th>
+                    <th>Gold Made In</th>
+                    <th>Gold Gram Price</th>
+                    <th>Gold Making Charge</th>
+                    <th>Gold Weight</th>
+                    <th>Total Gold Price</th>
+                  </tr>
+                </thead>
+                <tbody id="goldTable-body"></tbody>
+                <tr>
+                    <td>18kt</td>
+                    <td>Turkey</td>
+                    <td>75.000</td>
+                    <td>0</td>
+                    <td>4.5gm</td>
+                    <td>295.000</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="split right">
+            <div class="centered">
+                <!-- Third Table (Diamond Description) -->
+                <table>
+                    <thead>
+                        <!-- First header row -->
+                        <tr>
+                            <th colspan="6">Item Diamond</th>
+                        </tr>
+                        <!-- Second header row -->
+                        <tr>
+                            <th colspan="2">Stone</th>
+                            <th colspan="2">Diamond</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody id="diamondTable-body"></tbody>
+                    <!-- First data row -->
+                        <tr>
+                            <td colspan="2">0</td>
+                            <td colspan="2">0</td>
+                            
+                        </tr>
+                        <!-- Second data row -->
+                        <tr>
+                            <th>No.</th>
+                            <th>Clarity</th>
+                            <th>Weight</th>
+                            <th>Made In</th>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>5</td>
+                            <td>1</td>
+                            <td>Turkey</td>
+                        </tr>
+                        <!-- third data row -->
+                        <tr>
+                            <th >Color</th>
+                            <th colspan="2">Price</th>
+                            <th >Shape</th>
+                        </tr>
+                        <tr>
+                            <td >G</td>
+                            <td colspan="2">B</td>
+                            <td >A</td>
+                        </tr>
+                    </tbody>
+                </table>
+             </div>
+             </div>
+        </div>
+       
+    
+        <!-- Totals Section -->
+        <section class="totals">
+          <p><strong>Total:</strong> <span id="totalPrice">295.000 KD</span></p>
+          <p><strong>Total Discount:</strong> <span id="totalDiscount">75.000 KD</span></p>
+          <p><strong>Net Total:</strong> <span id="netTotal">220.000 KD</span></p>
+          <p><strong>Payment:</strong> K-net</p>
+        </section>
+    
+        <!-- Footer Section -->
+        <footer>
+          <div class="footer-contact">
+            <p>Tel: 22277141 Email: info@alothmangallery.com Web: www.alothmangallery.com</p>
+            <p>
+              The Promenade Mall - Alothman Street - Block 199 + 198 - Abdullah Alothman Tower Building No. 6 - Ground floor - P.O.Box: 26535 Safat - Kuwait 13126
+            </p>
+          </div>
+        </footer>
+      </div>
+    </body>
+  
+
+<script src="invoice.js"></script>
+</body>
+</html>

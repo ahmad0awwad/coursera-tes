@@ -1,0 +1,57 @@
+/* Ensure the images in the cart have a consistent size */
+.cart-item img {
+    max-width: 100px; /* Adjust this value as needed */
+    max-height: 100px; /* Adjust this value as needed */
+    object-fit: cover; /* Maintain aspect ratio and cover the given dimension */
+    border: 1px solid #ddd; /* Add a border for a cleaner look */
+    border-radius: 8px; /* Add a slight border radius */
+}
+
+/* General styling for the cart page */
+.cart-item {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item .remove_btn {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.quantity-spinner {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-button {
+    background-color: #b98570;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.quantity-button:hover {
+    background-color: #a37461;
+}
+
+.quantity-spinner input[type="number"] {
+    width: 60px;
+    text-align: center;
+    border: 1px solid #ddd;
+    margin: 0 5px;
+    padding: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .cart-item img {
+        max-width: 80px; /* Adjust for smaller screens */
+        max-height: 80px; /* Adjust for smaller screens */
+    }
+
+    .quantity-spinner input[type="number"] {
+        width: 50px; /* Adjust for smaller screens */
+    }
+}

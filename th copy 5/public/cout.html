@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <title>Checkout || ALOTHMAN GALLARY FOR FINE JEWELRY</title>
+</head>
+<body>
+    <!--HEADER START-->
+    <div id="header-placeholder"></div>
+    <!--HEADER END--> 
+
+    <!--banner top Start-->
+    <section class="bannner-top">
+        <div class="container">
+            <div class="banner-text text-center">
+                <h3>BEST SALE PRODUCT</h3>
+                <p>We Believe That Good Design is Always in Season</p>
+                <a href="#" class="btn btn-shop2">shop now</a>
+            </div>
+        </div>
+    </section>
+    <!--banner top End--> 
+<!--CONTENT MAIN START-->
+<section class="checkout">
+  <div class="container">
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item"><a href="cart.html">Cart</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+          </ol>
+      </nav>
+      <form id="checkout-form" class="custom-form">
+          <div class="coupon-inp">
+              <input type="text" class="form-control" placeholder="Have a coupon?">
+              <p>Click here to enter your code</p>
+          </div>
+          <div class="form-group">
+              <label for="shipping-method">Shipping Method *</label>
+              <select id="shipping-method" class="form-control">
+                  <option value="pickup">Reserve for Pickup</option>
+                  <option value="delivery" selected>Delivery</option>
+              </select>
+          </div>
+          <div id="pickup-fields" class="shipping-fields" style="display: none;">
+              <h3 class="heading2">Pickup Details</h3>
+              <div class="form-row">
+                  <div class="col-md-6">
+                      <div class="form-group">
+                          <label for="pickup-first-name">First Name *</label>
+                          <input type="text" id="pickup-first-name" class="form-control">
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="form-group">
+                          <label for="pickup-last-name">Last Name *</label>
+                          <input type="text" id="pickup-last-name" class="form-control">
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="pickup-phone">Phone Number *</label>
+                  <input type="text" id="pickup-phone" class="form-control" maxlength="8">
+              </div>
+              <div class="form-group">
+                  <label for="pickup-email">Email (Optional)</label>
+                  <input type="email" id="pickup-email" class="form-control">
+              </div>
+              <div class="form-group">
+                  <label for="pickup-civil-id">Civil ID Number</label>
+                  <input type="text" id="pickup-civil-id" class="form-control" maxlength="12">
+              </div>
+          </div>
+          <div id="delivery-fields" class="shipping-fields">
+              <h3 class="heading2">Delivery Details</h3>
+              <div class="form-row">
+                  <div class="col-md-6">
+                      <div class="form-group">
+                          <label for="delivery-first-name">First Name *</label>
+                          <input type="text" id="delivery-first-name" class="form-control">
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="form-group">
+                          <label for="delivery-last-name">Last Name *</label>
+                          <input type="text" id="delivery-last-name" class="form-control">
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="delivery-phone">Phone Number *</label>
+                  <input type="text" id="delivery-phone" class="form-control" maxlength="8">
+              </div>
+              <div class="form-group">
+                  <label for="delivery-email">Email (Optional)</label>
+                  <input type="email" id="delivery-email" class="form-control">
+              </div>
+              <div class="form-group">
+                  <label for="delivery-civil-id">Civil ID Number</label>
+                  <input type="text" id="delivery-civil-id" class="form-control" maxlength="12">
+              </div>
+              <div class="form-group" id="upload-civil-id" style="display: none;">
+                <label for="delivery-civil-id-document">Civil ID Document (Front and Back):</label>
+                <input type="file" id="delivery-civil-id-document" name="delivery-civil-id-document" multiple accept="image/*">
+                
+              </div>
+              <div class="form-group">
+                <label for="area">Area *</label>
+                <input type="text" id="area-search" class="form-control" placeholder="Search for area...">
+                <select id="area-list" class="form-control" size="5" style="display: none;">
+                    <option value="" disabled selected>Select your area</option>
+                    <!-- Dynamically populate options here -->
+                </select>
+            </div>
+            
+              <div class="form-group">
+                  <label for="delivery-block">Block *</label>
+                  <input type="text" id="delivery-block" class="form-control">
+              </div>
+              <div class="form-group">
+                  <label for="delivery-street">Street *</label>
+                  <input type="text" id="delivery-street" class="form-control">
+              </div>
+              <div class="form-group">
+                  <label for="delivery-house">House *</label>
+                  <input type="text" id="delivery-house" class="form-control">
+              </div>
+              <div class="form-group">
+                  <label for="delivery-floor">Floor (Optional)</label>
+                  <input type="text" id="delivery-floor" class="form-control">
+              </div>
+              <div class="form-group">
+                  <label for="delivery-flat">Flat (Optional)</label>
+                  <input type="text" id="delivery-flat" class="form-control">
+              </div>
+          </div>
+          <h3 class="heading2">Your order</h3>
+          <div class="table-responsive cst-table">
+              <table class="table">
+                  <thead>
+                      <tr>
+                          <th scope="col">Product</th>
+                          <th scope="col">Total</th>
+                      </tr>
+                  </thead>
+                  <tbody id="order-summary">
+                      <!-- Order summary will be dynamically inserted here -->
+                  </tbody>
+              </table>
+          </div>
+          <div class="cash-way">
+              <div class="card_radio">
+                  <div class="radio_styl">
+                      <input id="radio-4" class="radio-style" name="payment-method" type="radio" checked>
+                      <label for="radio-4" class="radio-style-1-label">Cash on delivery</label>
+                  </div>
+                  <p>Pay with cash upon delivery</p>
+              </div>
+              <div class="card_radio">
+                  <div class="radio_styl">
+                      <input id="radio-5" class="radio-style" name="payment-method" type="radio">
+                      <label for="radio-5" class="radio-style-1-label">Mastercard/Visa/Knet</label>
+                  </div>
+                  <p>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy</p>
+              </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Place Order</button>
+      </form>
+  </div>
+</section>
+
+    
+
+    <!--FOOTER START-->
+    <div id="footer-placeholder"></div>
+    <!--FOOTER END--> 
+
+    <!-- Optional JavaScript --> 
+    <!-- jQuery first, then Popper.js, then Bootstrap JS --> 
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+</html>

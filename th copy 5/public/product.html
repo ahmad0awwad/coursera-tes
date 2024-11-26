@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <title>Product Details || ALOTHMAN GALLARY FOR FINE JEWELRY</title>
+</head>
+
+<body>
+<!--HEADER START-->
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-lg">
+                    <a class="navbar_brand" href="index.html">
+                        <img src="images/logo.svg" alt="">
+                    </a>
+                    <div class="button-nav">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav_links mr-auto">
+                            <li class="active"><a href="index.html">Home</a></li>
+                            <li><a href="list.html">Products</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="right_links">
+                        <ul class="language_opt">
+                            <li><a href="#" class="selected">EN</a>/<a href="productAr.html">AR</a></li>
+                            <li><a href="#">Login</a></li>
+                        </ul>
+                        <ul class="cart_item">
+                            <li><a href="#"><img src="images/heart.png" alt=""></a></li>
+                            <li><a href="cart.html"><img src="images/cart.png" alt=""> <span class="cart-c">0</span></a></li>
+                            <li><a href="#"><img src="images/search-icon.png" alt=""></a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!--HEADER END-->
+
+<!--PRODUCT DETAILS START-->
+<!--PRODUCT DETAILS START-->
+<section class="product-details">
+    <div class="container">
+        <div class="dropdown-menu" id="categories-dropdown-menu">
+        </div>
+        
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="list.html">Products</a></li>
+                <li class="breadcrumb-item active" aria-current="page" id="breadcrumb-product-name">Loading...</li>
+            </ol>
+        </nav>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="product-gallery">
+                    <img src="images/loading.gif" id="mainImage" alt="Product Image" class="img-fluid main-image">
+                    <div id="thumbnails" class="thumbnails">
+                        <!-- Thumbnails will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="product-info">
+                    <input type="hidden" id="product-id" value="12345">
+
+                    <h1 class="product-title" id="product-title">Loading...</h1>
+                    <p class="product-price" id="product-price">Loading...</p>
+                    <p class="product-description" id="product-description">
+                        Loading...
+                    </p>
+                    <div class="quantity">
+                        <button class="quantity-button" onclick="this.nextElementSibling.stepDown()">-</button>
+                        <input type="number" value="1" min="1" max="10" class="quantity-input">
+                        <button class="quantity-button" onclick="this.previousElementSibling.stepUp()">+</button>
+                    </div>
+                    <button class="btn btn-primary" id="addToCartButton">Add to Cart</button>
+                    <button class="btn btn-primary" id="clear">clear</button>
+
+                    <button class="btn btn-secondary" id="addToWishlistButton">Add to Wishlist</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--PRODUCT DETAILS END-->
+
+<!--PRODUCT DETAILS END-->
+
+<!--FOOTER START-->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="f-card">
+                    <a href="index.html" class="brand_footer">
+                        <img src="images/logo.svg" alt="">
+                    </a>
+                    <ul class="social-links">
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2 class="heading3">INFO</h2>
+                        <ul class="address-box">
+                            <li><span><i class="fas fa-home"></i></span> Address</li>
+                            <li><span><img src="images/phone.png" alt=""></span> +0-000-000-0000</li>
+                            <li><span><i class="fas fa-envelope"></i></span> <a href="mailto:email@gmail.com">email@gmail.com</a></li>
+                            <li><span><i class="far fa-clock"></i></span> Monday - Saturday : 8:00 am - 18:00 pm<br>Sunday : Closed</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h2 class="heading3">Page</h2>
+                        <ul class="quick-links">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Products</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">About Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h2 class="heading3">Sign Up</h2>
+                        <form action="">
+                            <input type="text" class="form-control" placeholder="Enter Email Address">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<a href="javascript:" id="return-to-top">TOP</a>
+<!--FOOTER END-->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="js/jquery-3.3.1.slim.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>

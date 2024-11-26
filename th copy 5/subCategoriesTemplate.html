@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <title>Subcategories || ALOTHMAN GALLARY FOR FINE JEWELRY</title>
+</head>
+<body>
+    <!--HEADER START-->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-expand-lg">
+                        <a class="navbar_brand" href="index.html">
+                            <img src="images/logo.svg" alt="">
+                        </a>
+                        <div class="button-nav">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="nav_links mr-auto">
+                                <li class="active"><a href="index.html">Home</a></li>
+                                <li><a href="list.html">Products</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                            </ul>
+                        </div>
+                        <div class="right_links">
+                            <ul class="language_opt">
+                                <li><a href="#" class="selected">EN</a>/<a href="#">AR</a></li>
+                                <li><a href="#">Login</a></li>
+                            </ul>
+                            <ul class="cart_item">
+                                <li><a href="#"><img src="images/heart.png" alt=""></a></li>
+                                <li><a href="cart.html"><img src="images/cart.png" alt=""> <span class="cart-c">0</span></a></li>
+                                <li><a href="#"><img src="images/search-icon.png" alt=""></a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--HEADER END-->
+
+    <!--SUBCATEGORY DETAILS START-->
+    <section class="subcategory-details">
+        <div class="container">
+            <div class="row" id="subcategory-container">
+                <!-- Subcategory details will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+    <!--SUBCATEGORY DETAILS END-->
+
+    <!--FOOTER START-->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="f-card">
+                        <a href="index.html" class="brand_footer">
+                            <img src="images/logo.svg" alt="">
+                        </a>
+                        <ul class="social-links">
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2 class="heading3">INFO</h2>
+                            <ul class="address-box">
+                                <li><span><i class="fas fa-home"></i></span> Address</li>
+                                <li><span><img src="images/phone.png" alt=""></span> +0-000-000-0000</li>
+                                <li><span><i class="fas fa-envelope"></i></span> <a href="mailto:email@gmail.com">email@gmail.com</a></li>
+                                <li><span><i class="far fa-clock"></i></span> Monday - Saturday : 8:00 am - 18:00 pm<br>Sunday : Closed</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <h2 class="heading3">Page</h2>
+                            <ul class="quick-links">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Products</a></li>
+                                <li><a href="#">Contact</a></li>
+                                <li><a href="#">About Us</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <h2 class="heading3">Sign Up</h2>
+                            <form action="">
+                                <input type="text" class="form-control" placeholder="Enter Email Address">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <a href="javascript:" id="return-to-top">TOP</a>
+    <!--FOOTER END-->
+
+    <!-- Optional JavaScript -->
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <!-- Custom JavaScript for loading the mock database and dynamic subcategory generation -->
+    <script>
+       function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
+
+const categoryId = getQueryParam('category');
+const subcategoryId = getQueryParam('subcategory');
+
+fetch(`/api/categories/${categoryId}`)
+    .then(response => response.json())
+    .then(category => {
+        let subcategory;
+
+        if (category && category.subcategories) {
+            subcategory = category.subcategories.find(sub => sub._id === subcategoryId);
+        }
+
+        if (subcategory) {
+            const subcategoryContainer = document.getElementById('subcategory-container');
+            let subcategoryHtml = `<h1>${subcategory.name.en}</h1>`;
+
+            subcategory.products.forEach(product => {
+                subcategoryHtml += `
+                    <div>
+                        <h2><a href="productTemplate.html?category=${categoryId}&subcategory=${subcategoryId}&product=${product._id}">${product.name.en}</a></h2>
+                    </div>
+                `;
+            });
+
+            subcategoryContainer.innerHTML = subcategoryHtml;
+        } else {
+            document.getElementById('subcategory-container').innerHTML = '<p>Subcategory not found.</p>';
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching category:', error);
+        document.getElementById('subcategory-container').innerHTML = '<p>Error fetching subcategory data.</p>';
+    });
+
+    </script>
+</body>
+</html>

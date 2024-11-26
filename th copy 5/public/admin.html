@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <header>
+            <img src="images/logo.svg" alt="Logo" class="logo">
+            <h1>Admin Panel</h1>
+        </header>
+        <div class="nav-container">
+            <nav>
+                <ul>
+                    <li><a href="#" id="add-category-link">Add Category</a></li>
+                    <li><a href="#" id="add-subcategory-link">Add Subcategory</a></li>
+                    <li><a href="#" id="edit-category-link">Edit Category</a></li>
+                    <li><a href="#" id="edit-subcategory-link">Edit Subcategory</a></li>
+                    <li><a href="#" id="delete-link">Delete</a></li>
+                    <li><a href="#" id="products-link">Products</a></li>
+                    <li><a href="#" id="view-invoices-link">View Invoices</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="main-content">
+            <main>
+                <!-- Add Category Form -->
+                <section id="add-category-section" class="admin-section">
+                    <h2>Add New Category</h2>
+                    <form id="addCategoryForm">
+                        <label for="categoryNameEn">Category Name (English):</label>
+                        <input type="text" id="categoryNameEn" name="categoryNameEn" required>
+                        <label for="categoryNameAr">Category Name (Arabic):</label>
+                        <input type="text" id="categoryNameAr" name="categoryNameAr" required>
+                        <button type="submit">Add Category</button>
+                    </form>
+                </section>
+
+                <!-- Add Subcategory Form -->
+                <section id="add-subcategory-section" class="admin-section">
+                    <h2>Add New Subcategory</h2>
+                    <form id="addSubcategoryForm">
+                        <label for="parentCategory">Parent Category:</label>
+                        <select id="parentCategory" name="parentCategory" required></select>
+                        <label for="subcategoryNameEn">Subcategory Name (English):</label>
+                        <input type="text" id="subcategoryNameEn" name="subcategoryNameEn" required>
+                        <label for="subcategoryNameAr">Subcategory Name (Arabic):</label>
+                        <input type="text" id="subcategoryNameAr" name="subcategoryNameAr" required>
+                        <button type="submit">Add Subcategory</button>
+                    </form>
+                </section>
+
+                <!-- Products Section -->
+                <section id="products-section" class="admin-section">
+                    <h2>Products</h2>
+                    <button id="add-product-btn">Add New Product</button>
+                    <div class="filters">
+                        <input type="text" id="product-search" placeholder="Search Products">
+                        <select id="filter-category">
+                            <option value="">All Categories</option>
+                        </select>
+                        <select id="filter-subcategory">
+                            <option value="">All Subcategories</option>
+                        </select>
+                    </div>
+                    <div id="product-list" class="product-list"></div>
+                    <div id="edit-product-form-container"></div>
+                </section>
+
+                <!-- Add Product Form -->
+                <section id="add-product-section" class="admin-section">
+                    <h2>Add New Product</h2>
+                    <form id="addProductForm" enctype="multipart/form-data">
+                        <label for="category">Category:</label>
+                        <select id="category" name="category" required></select>
+                        <label for="subcategory">Subcategory:</label>
+                        <select id="subcategory" name="subcategory" required></select>
+                        <label for="productNameEn">Product Name (English):</label>
+                        <input type="text" id="productNameEn" name="productNameEn" required>
+                        <label for="productNameAr">Product Name (Arabic):</label>
+                        <input type="text" id="productNameAr" name="productNameAr" required>
+                        <label for="productDescriptionEn">Description (English):</label>
+                        <textarea id="productDescriptionEn" name="productDescriptionEn" required></textarea>
+                        <label for="productDescriptionAr">Description (Arabic):</label>
+                        <textarea id="productDescriptionAr" name="productDescriptionAr" required></textarea>
+                        <label for="price">Price:</label>
+                        <input type="number" id="price" name="price" required>
+                        <label for="images">Images:</label>
+                        <input type="file" id="images" name="images" multiple required>
+                        <button type="submit">Add Product</button>
+                        <button type="button" id="cancelAddProductBtn">Cancel</button>
+                    </form>
+                </section>
+
+                <!-- Delete Form -->
+                <section id="delete-section" class="admin-section">
+                    <h2>Delete Category, Subcategory, or Product</h2>
+                    <form id="deleteForm">
+                        <label for="deleteType">Type:</label>
+                        <select id="deleteType" name="deleteType" required>
+                            <option value="category">Category</option>
+                            <option value="subcategory">Subcategory</option>
+                            <option value="product">Product</option>
+                        </select>
+                        <div id="deleteCategoryContainer">
+                            <label for="deleteCategory">Category:</label>
+                            <select id="deleteCategory" name="deleteCategory" required></select>
+                        </div>
+                        <div id="deleteSubcategoryContainer" style="display: none;">
+                            <label for="deleteSubcategory">Subcategory:</label>
+                            <select id="deleteSubcategory" name="deleteSubcategory"></select>
+                        </div>
+                        <div id="deleteProductContainer" style="display: none;">
+                            <label for="deleteProduct">Product:</label>
+                            <select id="deleteProduct" name="deleteProduct"></select>
+                        </div>
+                        <button type="submit">Delete</button>
+                    </form>
+                </section>
+
+                <!-- View Invoices Section -->
+                <section id="view-invoices-section" class="admin-section">
+                    <h2>View Invoices</h2>
+                    <div id="invoices-container"></div>
+                </section>
+
+                <!-- Invoice Details Modal -->
+                <div id="invoice-details-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h2>Invoice Details</h2>
+                        <div id="invoice-details-container"></div>
+                        <h3>Civil ID Images</h3>
+                        <div id="civil-id-images-container"></div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="js/admin.js"></script>
+</body>
+</html>
